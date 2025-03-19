@@ -65,7 +65,7 @@ export const updateById = (id: string, body: ArrayBuffer): Response => {
     }
     try {
         const db = Sqlite.openDefault()
-        db.execute("UPDATE Products set NAME=? WHERE Id=?", [payload.name, id])
+        db.execute("UPDATE Products set Name=? WHERE Id=?", [payload.name, id])
         return json({ id: id, name: payload.id } as Product)
     }
     catch (err) {
