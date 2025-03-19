@@ -12,6 +12,12 @@ router
     .delete("/products/:id", ({ id }) => deleteById(id))
     .post("/create-table", () => createTable());
 
+// Create table is part of this app for demonstration purposes
+// In a real-world application you don't want to expose
+// this capability via HTTP
+// before deploying this application to production, remove the 
+// corresponding post handler in the router above or
+// add proper authentication capabilities to prevent abuse
 const createTable = (): Response => {
     try {
         const db = Sqlite.openDefault();
